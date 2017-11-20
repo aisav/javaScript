@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>obj</title>
+</head>
+<body>
+<script>
+    var obj1 = new Object();
+    obj1.color = "red";
+    obj1.make = "ford";
+    console.log(obj1);
+    console.log(obj1["make"]);
+    console.log(obj1["color"]);
+
+    var car = {color:"red",make:"ford",doors:5,model:"mustang"};  // literal
+    console.log(car)
+    var prop = prompt("what did you want to know about the car");
+    console.log(car[prop]);
+
+    car.color = "blue";
+    console.log(car.color);
+
+    car.driver ="Lance";
+    for(var property in car){
+        console.log(property + " " + car[property]);
+        //console.log();
+    }
+
+</script>
+</body>
+</html>

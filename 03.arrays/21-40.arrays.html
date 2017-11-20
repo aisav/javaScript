@@ -25,7 +25,8 @@
     array.pop(); //remove last
     array.shift(); //remove first
     array.unshift("first"); //add first
-    array.splice(2,2); //removed objects from 2, 2 object
+    array.splice(2,2); //removed objects from index 2, 2 objects
+    array.slice(0,4); //get subarray without update
     array.reverse();
     array.sort();
     array.push("zzzzzz");
@@ -33,6 +34,25 @@
     console.log(array);
     array.fill("test1", 4); //fill begining from 4  all with test1
     console.log(array);
+
+
+    var arr = [3, 4, 8, 2, 6, 7];
+    console.log(arr);
+    var find = prompt("Input the digit, to find index");
+    var int = Number(find)
+    var i = arr.indexOf(int);
+    console.log("searching: " + int);
+    i > -1 ? console.log( i + " index: "+arr[i]) : console.log("not found");
+    arr.includes(i) ? console.log( i + " index: "+arr[i]) : console.log("not found");
+
+
+    for(var i in arr) {
+        console.log(i);
+        console.log(arr[i]);
+    }
+
+
+
 </script>
 </body>
 </html>
