@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>arr</title>
+</head>
+<body>
+<script type="application/javascript">
+    var array = [1,"str", true, ["other array", 2]];
+    var arr2 = new Array("strr",22);
+    console.log(arr2[0]);
+    arr2[1] = "New Value";
+    console.log(arr2);
+    var arr3 = new Array();
+    arr3 = 3;
+
+    console.log("array length is: "+array.length)
+    array[99] = "new value";//excepted 95 values (undefined)
+    array[77]= "value";
+    console.log(array);
+    console.log("array length is: "+array.length);//100
+    console.log("tupeof array : " +typeof array[1]);
+    console.log("isarray array:  " +Array.isArray(array));
+    array.push("100"); //add last
+    array.pop(); //remove last
+    array.shift(); //remove first
+    array.unshift("first"); //add first
+    array.splice(2,2); //removed objects from 2, 2 object
+    array.reverse();
+    array.sort();
+    array.push("zzzzzz");
+    array.fill("test1", 4, 50); //fill from 4 to 50 with test1
+    console.log(array);
+    array.fill("test1", 4); //fill begining from 4  all with test1
+    console.log(array);
+</script>
+</body>
+</html>
