@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>function</title>
+</head>
+<body>
+
+</body>
+    <h1 id="output"></h1>
+</html>
+<script type="application/javascript">
+    var response = "55"; // global
+    var output = document.getElementById("output");
+
+    myFun1(4,5,6);
+// Concatination only from left to write, if not number
+    var a = 1+1+"hello"+1;
+
+    output.innerHTML = a;
+
+
+
+    function myFun2(){
+        var b = 1 + "world";
+        output.innerHTML += b + "<br>";
+        return b;
+    }
+
+
+    function myFun1(a,b,c){
+        response = a + b + c; //global
+        var response = a + b + c; //local
+        output.innerHTML = response;
+        return response;
+    }
+</script>
