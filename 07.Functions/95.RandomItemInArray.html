@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>rand</title>
+</head>
+<body>
+<div id = "output"></div>
+<button onclick="getEL()" >Click Me</button>
+</body>
+</html>
+<script>
+    var arr = [88, 35, 27, 59, "Art", 1, 6, 0]
+    var output =document.getElementById("output");
+
+    function getEL() {
+        var i = Math.floor(Math.random()*arr.length);
+
+        output.innerHTML+=arr[i]+ "<br>";
+    }
+
+</script>
