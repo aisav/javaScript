@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+</head>
+<body>
+First Number: <input type="text" id="number1">
+Second Number: <input type="text" id="number2">
+
+<input type="button" value="Add" onclick="callAdd()">
+<input type="button" value="Sub" onclick="callSub()">
+<input type="button" value="Mul" onclick="callMul()">
+<input type="button" value="Div" onclick="callDiv()">
+<br>
+<div id="output"></div>
+<script>
+    var number1 = document.getElementById("number1");
+    var number2 = document.getElementById("number2");
+
+    var output = document.getElementById("output");
+
+    function callOperation(a, b, s, cback) {
+        var result = cback(Number(a), Number(b));
+        output.innerHTML += a + " " + s + " " + b + " " +
+            "=" + " " + result + "<br>";
+    }
+
+
+    function callAdd() {
+        callOperation(number1.value, number2.value, "+", function (a, b) {
+            return a + b;
+        })
+    }
+
+    function callSub() {
+        callOperation(number1.value, number2.value, "-", function (a, b) {
+            return a - b;
+        })
+    }
+
+    function callMul() {
+        callOperation(number1.value, number2.value, "*", function (a, b) {
+            return a * b;
+        })
+    }
+
+    function callDiv() {
+        callOperation(number1.value, number2.value, "/", function (a, b) {
+            return a / b;
+        })
+    }
+
+</script>
+</body>
+
+</html>
