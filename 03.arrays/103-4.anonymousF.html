@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Anonym</title>
+</head>
+<body>
+<div id="out"></div>
+</body>
+</html>
+<script>
+    var funVar = function(a="Hello ") {
+        document.getElementById("out").innerHTML += a +"World<br>"
+    }
+    funVar();
+
+    (function () {
+        document.getElementById("out").innerHTML += "From anonymous executing itself<br>"
+
+    })();
+</script>
