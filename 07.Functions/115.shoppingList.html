@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shopping List</title>
+</head>
+<body>
+<input type="text" id="prName" placeholder="Product Name">
+<input type="button" onclick="addProduct()" value="add Product">
+<div id="output"></div>
+<script>
+    var out = document.getElementById("output");
+    function addProduct() {
+        var productName = document.getElementById("prName").value;
+        if(productName != null) {
+            out.innerHTML += productName+"<br>";
+        }
+    }
+</script>
+</body>
+</html>
