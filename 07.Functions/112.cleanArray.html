@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>clean</title>
+</head>
+<body>
+<script>
+    var myArr = ["text", 2, 8, "p", 8, "text", 9, 6, 2];
+    alert(cleanArr(myArr));
+
+    function cleanArr(arr) {
+        cArr = [];
+        var obj = {};
+        for (var i = 0; i<arr.length; i++){
+            obj[arr[i]]="a";
+        }
+        for (var o in obj){
+            cArr.push(o);
+        }
+
+        return cArr;
+    }
+
+
+</script>
+</body>
+</html>
