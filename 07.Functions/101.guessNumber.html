@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Guess Number</title>
+</head>
+<body>
+<input id="g1">
+<input id="g2">
+<input id="g3">
+<button onclick="crack()">check</button>
+<div id="output"></div>
+<script>
+    var count;
+    var output = document.getElementById("output");
+    var r1 = Math.floor(Math.random()*9);
+    var r2 = Math.floor(Math.random()*9);
+    var r3 = Math.floor(Math.random()*9);
+    var currentNumberdigits = [];
+    currentNumberdigits.push(r1);
+    currentNumberdigits.push(r2);
+    currentNumberdigits.push(r3);
+    output.innerHTML = currentNumberdigits;
+
+    function crack() {
+        count =0;
+        var d1 = document.getElementById("g1");
+        var d2 = document.getElementById("g2");
+        var d3 = document.getElementById("g3");
+        var guessNumberdigits = [];
+        guessNumberdigits.push(d1.value);
+        guessNumberdigits.push(d2.value);
+        guessNumberdigits.push(d3.value);
+        output.innerHTML += "<br>";
+        for(var i=0; i <3; ++i){
+            output.innerHTML += checkDigits(currentNumberdigits[i], guessNumberdigits[i], i)+",";
+        }
+        if(count==3){
+            output.innerHTML += "___________You guessed the number";
+        }
+    }
+    function checkDigits(a, b, i) {
+        if(a<b){
+            return "L";
+        }
+        if(a>b){
+            return "H";
+        }
+        if(a==b) {
+            count++;
+
+            var el = document.getElementById("g" + (i+1));
+            if (el.disabled == false) {
+                el.setAttribute("disabled", true);
+            }
+
+            return a;
+        }
+    }
+</script>
+</body>
+</html>
