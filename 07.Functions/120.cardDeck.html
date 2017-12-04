@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>deck</title>
+</head>
+<body>
+Players count:
+<select id="playersCount" >
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+</select>
+<input type="button" onclick="startDeal();" value="Deal">
+<br>
+<div id="output"></div>
+<script>
+    var suits = ["spades", "hearts", "clubs", "diams"];
+    var cardFaces = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"];
+    var cards = [];
+    var players = [];
+
+    function startDeal() {
+        cards = [];     //Setting to null arrays IMPORTAAAAAAAAAAAAAAANT
+        players = [];
+        var countEl = document.getElementById("playersCount");
+        playersCount = countEl.options[countEl.selectedIndex].value;
+        for (i =0; i < playersCount; ++i) {
+            players[i]= [];
+        }
+        buildCards(cards);
+        shuffleCards(cards);
+        dealCards(cards, players);
+        outputPlayerCards();
+    }
+
+
+    function buildCards(cards) {
+        for (s in suits) {
+            for (f in cardFaces) {
+                var card = {
+                    suite: suits[s],
+                    face: cardFaces[f],
+                    bgcolor: suits[s]=="hearts" || suits[s]=="diams" ? "red" : "black"
+                }
+                cards.push(card);
+            }
+        }
+    }
+
+    function shuffleCards(cards) {
+        for (var i = 0; i < cards.length; ++i) {
+            var j = Math.floor(Math.random() * cards.length);
+            var temp = cards[i];
+            cards[i] = cards[j];
+            cards[j] = temp;
+        }
+    }
+
+    function dealCards(cards, players) {
+        for(var i =0, p = 0;i< 52; i++){
+            players[p].push(cards[i]);
+            ++p;
+            if(p==playersCount) {
+                p=0;
+            }
+        }
+    }
+
+    function outputPlayerCards() {
+        var out = document.getElementById("output");
+        out.innerHTML = "";
+        for (i=0; i<playersCount; ++i) {
+            out.innerHTML += "<br><br>" + "Player" + (i+1) + " cards are: " ;
+            for(j in players[i]) {
+                var card = players[i][j];
+                out.innerHTML +=
+                    "<span style=\"color:"+card.bgcolor+"\";>"+
+                    card.face +  card.suite + ", "+
+                    "</span>";
+            }
+        }
+    }
+
+</script>
+</body>
+</html>
