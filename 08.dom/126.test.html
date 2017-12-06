@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dom</title>
+</head>
+<body>
+<div id="ttt"></div>
+<script>
+    console.dir(window);
+    for(var property in window){
+        document.write(property+"*******"+document[property]+"<br>");
+    }
+    (document.getElementById("ttt")).innerHTML+= window.innerWidth + " _ "+ window.outerWidth +"<br>"+
+    window.location;
+
+    var w = window.open("t.html");
+    w.onclose("Dont close");
+</script>
+
+</body>
+</html>
