@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>nav</title>
+</head>
+<body>
+<script>
+    var navObj = navigator;
+    printAllProperties(navObj);
+//    navObj.appName
+//    navObj.appVersion
+//    navObj.appCodeName
+//    navObj.userAgent
+//    navObj.cookieEnabled
+//    navObj.platform
+//    navObj.systemLanguage
+    function printAllProperties(obj) {
+        for (i in obj) {
+            document.write(i+" "+ obj[i] + "<br>");
+        }
+    }
+</script>
+</body>
+</html>
