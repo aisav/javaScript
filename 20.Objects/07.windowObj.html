@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>window</title>
+</head>
+<body>
+<input type="button" name="openGoogle" onclick="windowOpen()" value="openGoogle">
+<input type="button" name="closeGoogle" onclick="windowClose()" value="closeGoogle">
+<script>
+    function windowOpen() {
+        myWindow = window.open("http://google.com");
+    }
+
+    function windowClose() {
+        myWindow.close();
+    }
+
+//    function windowStatus() {
+//        myWindow.status=event.clientX + ":" + event.clientY;
+//    }
+//    document.onmousemove = windowStatus(); //Old browser
+</script>
+</body>
+</html>
