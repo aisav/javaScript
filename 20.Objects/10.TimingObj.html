@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TimingObj</title>
+</head>
+<body>
+<script>
+//    var timeout = setTimeout(showAlert, 5000);  one time call
+    var timeout = setInterval(showAlert, 5000);
+
+    var afterSeconds = 10;
+    function showAlert(obj) {
+            alert("Interval is 5000)");
+            afterSeconds -= 5;
+            if(afterSeconds<=0){
+                clearInterval(timeout)
+            }
+    }
+</script>
+
+</body>
+</html>
