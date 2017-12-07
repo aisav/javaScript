@@ -7,7 +7,11 @@
 <body onkeypress="keyPress(event)">
 <p id="data"></p>
 <div onmousedown="showActivity(event)">Click on this with mouse button</div>
+<!--<input onabort="">
+<input onblur="">
+<input onerror=""> -->
 <script>
+
     function keyPress(event) {
         x = event.which || event.keyCode
         document.getElementById("data").innerHTML = x;
