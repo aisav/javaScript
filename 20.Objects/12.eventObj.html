@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>event</title>
+</head>
+<body onkeypress="keyPress(event)">
+<p id="data"></p>
+<div onmousedown="showActivity(event)">Click on this with mouse button</div>
+<script>
+    function keyPress(event) {
+        x = event.which || event.keyCode
+        document.getElementById("data").innerHTML = x;
+    }
+    function showActivity(event) {
+        if (event.button == 0) {
+            alert("Yo have pressed mouse left buuton");
+        }
+        else {
+            alert("Yo have pressed mouse right buuton");
+        }
+    }
+</script>
+</body>
+</html>
